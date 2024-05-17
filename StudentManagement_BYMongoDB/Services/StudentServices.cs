@@ -17,8 +17,12 @@ namespace StudentManagement_BYMongoDB.Services
         public Students Create(Students student)
         {
             _student.InsertOne(student);
-
             return student;
+        }
+        public List<Students> CreateMultipleStudents(List<Students>  students)
+        {
+            _student.InsertMany(students);
+            return students;
         }
 
         public List<Students> Get()

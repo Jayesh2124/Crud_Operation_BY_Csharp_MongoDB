@@ -37,6 +37,15 @@ namespace StudentManagement_BYMongoDB.Controllers
              studentService.Create(student);
 
             return CreatedAtAction(nameof(Get), new { id = student.Id }, student);
+        }     
+        
+        // POST api/<StudentController>
+        [HttpPost("InsertStudentsData")]
+        public ActionResult<Students> InsertStudentsData([FromBody] List<Students> students)
+        {
+             studentService.CreateMultipleStudents(students);
+
+            return CreatedAtAction(nameof(Get), students);
         }
 
         // PUT api/<StudentController>/5

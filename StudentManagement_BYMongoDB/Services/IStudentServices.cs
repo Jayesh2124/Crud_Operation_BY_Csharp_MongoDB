@@ -7,6 +7,7 @@ namespace StudentManagement_BYMongoDB.Services
         List<Students> Get();
         Students Get(string Id);
         Students Create(Students student);
+        List<Students> CreateMultipleStudents(List<Students> students);
         void Update(string Id, Students student);
         void Remove(string Id);
     }
