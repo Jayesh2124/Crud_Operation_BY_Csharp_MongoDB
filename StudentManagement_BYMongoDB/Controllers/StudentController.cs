@@ -29,6 +29,17 @@ namespace StudentManagement_BYMongoDB.Controllers
         {
             return studentService.Get(id);
         }
+        
+        [HttpGet("GetGraduatedStudents")]
+        public ActionResult<List<Students>> GetGraduatedStudents()
+        {
+            return studentService.GetGraduatedStudents();
+        }   
+        [HttpGet("GetStudentsDetailsOnly")]
+        public ActionResult<List<dynamic>> GetStudentsDetailsOnly()
+        {
+            return (List<dynamic>)studentService.GetStudentsDetailsOnly();
+        }
 
         // POST api/<StudentController>
         [HttpPost]
